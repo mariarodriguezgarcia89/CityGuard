@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="tipos_incidencia">
+        <item>Bache</item>
+        <item>Alumbrado público</item>
+        <item>Limpieza urbana</item>
+        <item>Vandalismo</item>
+        <item>Tráfico</item>
+        <item>Alcantarilla</item>
+        <item>Parque</item>
+        <item>Acerado</item>
+        <item>Otros</item>
+    </string-array>
+</resources>

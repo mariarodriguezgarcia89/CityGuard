@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/fondo_incidencias"
+    tools:context=".NuevaIncidenciaActivity"
+    android:fitsSystemWindows="true">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/colorPrimary"
+        android:title="Nueva incidencia"
+        android:titleTextColor="@android:color/white"  android:elevation="4dp"
+        app:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"/> <androidx.constraintlayout.widget.ConstraintLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp"
+    android:layout_marginTop="?attr/actionBarSize">
+
+    <TextView
+        android:id="@+id/tvPantalla"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Formulario de incidencia"
+        android:textSize="30sp"  android:textStyle="bold"
+        android:textColor="@color/colorPrimary"  android:fontFamily="sans-serif-black"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="16dp"/>
+
+    <ScrollView
+        android:id="@+id/formScrollView"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintTop_toBottomOf="@id/tvPantalla"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/bottomNavigationView">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingBottom="16dp">
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardFormulario"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                app:cardBackgroundColor="#FFFFFF"
+                app:cardCornerRadius="8dp"
+                app:cardElevation="8dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="16dp">
+
+                    <TextView
+                        android:id="@+id/textViewDireccion"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Dirección:"
+                        android:textSize="16sp"
+                        android:textStyle="bold"
+                        android:fontFamily="sans-serif-medium"
+                        android:textColor="@color/colorPrimary"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        android:layout_marginTop="8dp"/>
+
+                    <EditText
+                        android:id="@+id/editTextDireccion"
+                        style="@style/CityGuardEditText_Field"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:hint="Escriba la dirección"
+                        android:inputType="textPostalAddress"
+                        app:layout_constraintTop_toBottomOf="@id/textViewDireccion"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        android:layout_marginTop="8dp"/>
+
+                    <TextView
+                        android:id="@+id/textViewTipo"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Tipo de incidencia:"
+                        android:textSize="16sp"
+                        android:textStyle="bold"
+                        android:fontFamily="sans-serif-medium"
+                        android:textColor="@color/colorPrimary"
+                        android:layout_marginTop="24dp"
+                        app:layout_constraintTop_toBottomOf="@id/editTextDireccion"
+                        app:layout_constraintStart_toStartOf="parent"/>
+
+                    <Spinner
+                        android:id="@+id/spinner"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        style="@style/CityGuardSpinner"
+                        app:layout_constraintTop_toBottomOf="@id/textViewTipo"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        android:layout_marginTop="8dp"/>
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/layoutOtros"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:visibility="gone"
+                        android:hint="Especificar tipo"
+                        app:layout_constraintTop_toBottomOf="@id/spinner"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        android:layout_marginTop="24dp">
+
+                        <EditText
+                            android:id="@+id/editTextOtros"
+                            style="@style/CityGuardEditText_Field"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:inputType="text"/>
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <TextView
+                        android:id="@+id/textViewDescripcion"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Descripción:"
+                        android:textSize="16sp"
+                        android:textStyle="bold"
+                        android:fontFamily="sans-serif-medium"
+                        android:textColor="@color/colorPrimary"
+                        android:layout_marginTop="24dp"
+                        app:layout_constraintTop_toBottomOf="@id/layoutOtros"
+                        app:layout_constraintStart_toStartOf="parent"/>
+
+                    <EditText
+                        android:id="@+id/txtDescripcion"
+                        style="@style/CityGuardEditText_Field"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:hint="Describa la incidencia"
+                        android:minHeight="120dp"
+                        android:gravity="top"
+                        android:inputType="textMultiLine"
+                        app:layout_constraintTop_toBottomOf="@id/textViewDescripcion"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        android:layout_marginTop="8dp"/>
+
+                    <Button
+                        android:id="@+id/btnGuardar"
+                        style="@style/CityGuardButton"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:text="Guardar Incidencia"
+                        app:layout_constraintTop_toBottomOf="@id/txtDescripcion"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        android:layout_marginTop="32dp"
+                        android:layout_marginBottom="16dp"/>
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </androidx.cardview.widget.CardView>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottomNavigationView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="@android:color/white"
+        app:menu="@menu/bottom_nav_menu"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

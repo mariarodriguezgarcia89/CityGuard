@@ -1,0 +1,56 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Tema base usando AppCompat (más compatible) -->
+    <style name="Base.Theme.CityGuard" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Colores principales -->
+        <item name="colorPrimary">@color/colorPrimary</item>          <!-- #8B0000 -->
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>  <!-- #5C0000 -->
+        <item name="colorAccent">@color/colorAccent</item>            <!-- #8B0000 -->
+
+        <!-- Color de fondo -->
+        <item name="android:windowBackground">@color/white</item>
+        <item name="android:statusBarColor">@color/colorPrimaryDark</item>
+
+        <!-- Deshabilitar ActionBar por defecto -->
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+    <!-- Tema principal de la aplicación -->
+    <style name="Theme.CityGuard" parent="Base.Theme.CityGuard" />
+
+    <!-- ========== ESTILOS SIMPLIFICADOS ========== -->
+
+    <!-- Estilo para Toolbar -->
+    <style name="CityGuardToolbar" parent="Widget.AppCompat.Toolbar">
+        <item name="android:background">@color/colorPrimary</item>
+        <item name="titleTextColor">@color/white</item>
+        <item name="android:elevation">4dp</item>
+    </style>
+
+    <!-- Estilo para botones -->
+    <style name="CityGuardButton" parent="Widget.AppCompat.Button">
+        <item name="android:background">@drawable/button_background</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:padding">12dp</item>
+        <item name="android:textAllCaps">false</item>
+        <item name="android:textSize">16sp</item>
+    </style>
+
+    <!-- Estilo para EditText -->
+    <style name="CityGuardEditText" parent="Widget.AppCompat.EditText">
+        <item name="android:textColor">@color/black</item>
+        <item name="android:padding">12dp</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:background">@drawable/edittext_background</item>
+    </style>
+
+    <style name="CityGuardEditText_Field" parent="CityGuardEditText">
+    </style>
+
+    <!-- Estilo para Spinner -->
+    <style name="CityGuardSpinner" parent="Widget.AppCompat.Spinner">
+        <item name="android:padding">12dp</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="android:background">@drawable/spinner_background</item>
+    </style>
+</resources>
